@@ -1,0 +1,95 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+    {% for i in messages %}
+    <h3>{{i}}</h3>a
+    {% endfor %}
+    {% endif %}
+    <form method="post" action="/studentadd/" >
+        {% csrf_token %}
+        name<input type="text" name="name"/><br><br>
+        contact<input type="text" name="contact"/><br><br>
+        section<input type="text" name="section"/><br><br>
+        school<input type="text" name="school"/><br><br>
+            <input type="submit"/>        
+    </form>
+</body>
+</html>
+ {% endcomment %}
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3 style="text-align: center;">Contact Form</h3><hr>
+
+<div class="container">
+    {% if messages %}
+    {% for i in messages %}
+    <h3>{{i}}</h3>
+    {% endfor %}
+    {% endif %}
+    <form method="post" action="/studentadd/" >
+        {% csrf_token %}
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+
+    <label for="lname">contact</label>
+    <input type="text" id="lname" name="contact" placeholder="Your contact..">
+
+    <label for="lname">section</label>
+    <input type="text" id="lname" name="section" placeholder="Your section.">
+
+    <label for="lname">school</label>
+    <input type="text" id="lname" name="school" placeholder="Your school..">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+

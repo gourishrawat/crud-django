@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+    {% for i in messages %}
+    <h3>{{i}}</h3>a
+    {% endfor %}
+    {% endif %}
+    <form method="post" action="/editdata/" >
+        {% csrf_token %}
+        <input type="hidden" name="uid" value='{{uid.id}}' /><br><br>
+        name<input type="text" name="name"/><br><br>
+        contact<input type="text" name="contact"/><br><br>
+        section<input type="text" name="section"/><br><br>
+        school<input type="text" name="school"/><br><br>
+            <input type="submit"/>        
+    </form>
+</body>
+</html>
